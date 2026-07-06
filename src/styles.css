@@ -174,6 +174,20 @@ footer button,footer a{display:block;background:transparent;border:0;color:#d7e7
 .float{position:fixed;right:22px;bottom:22px;z-index:70;width:62px;height:62px;border-radius:999px;background:#22c55e;color:#fff;display:grid;place-items:center;box-shadow:0 18px 40px rgba(34,197,94,.32)}
 .float svg{width:30px;height:30px}
 
+.logo-brand{padding:0;border-radius:18px;overflow:hidden;background:#0b2943;border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 35px rgba(7,59,98,.16)}
+.logo-brand img{height:58px;width:auto;max-width:255px;object-fit:cover;object-position:left center;display:block}
+header.scrolled .logo-brand{box-shadow:0 10px 28px rgba(7,59,98,.12)}
+.hero-logo{width:min(430px,100%);border-radius:24px;overflow:hidden;background:#0b2943;border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 50px rgba(0,0,0,.22);margin-bottom:18px}
+.hero-logo img{width:100%;height:auto;display:block}
+.page-logo{width:min(330px,100%);border-radius:20px;margin-bottom:18px;background:#0b2943;box-shadow:0 18px 50px rgba(0,0,0,.22)}
+.footer-brand.logo-brand{display:inline-flex;margin-bottom:16px}
+.footer-brand.logo-brand img{height:62px;max-width:280px}
+@media(max-width:720px){
+  .logo-brand img{height:50px;max-width:205px}
+  .hero-logo{width:min(320px,100%)}
+  .page-logo{width:min(280px,100%)}
+}
+
 @media(max-width:1120px){
   nav,.actions{display:none}
   .hamb{display:grid;place-items:center}

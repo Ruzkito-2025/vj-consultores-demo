@@ -17,6 +17,11 @@ const EMAIL = 'informacionprotpae@gmail.com'
 const wa = (message = 'Hola VJ Consultores Perú, quiero información sobre sus servicios de seguridad e ingeniería.') =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
+const logo = {
+  full: '/brochure/vj-logo-full.png',
+  icon: '/brochure/vj-logo-icon.png',
+}
+
 const brochure = {
   portada: '/brochure/page-01.png',
   nosotros: '/brochure/page-02.png',
@@ -243,9 +248,8 @@ function Header({ page, mobile, setMobile, go, setQuote }) {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="nav">
-        <button className="brand" onClick={() => go('inicio')}>
-          <span className="logo-mark">VJ</span>
-          <div><strong>VJ Consultores Perú</strong><small>Seguridad e Ingeniería</small></div>
+        <button className="brand logo-brand" onClick={() => go('inicio')}>
+          <img src={logo.full} alt="VJ Consultores Perú" />
         </button>
         <nav>
           {pages.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'active' : ''} onClick={() => go(id)}><Icon />{label}</button>)}
@@ -289,6 +293,7 @@ function Hero({ hero, setHero, go, setQuote }) {
       <div className="hero-bg" />
       <div className="hero-inner">
         <div className="hero-copy">
+          <div className="hero-logo"><img src={logo.full} alt="VJ Consultores Perú" /></div>
           <span className="eyebrow"><Sparkles /> {s.eyebrow}</span>
           <AnimatePresence mode="wait">
             <motion.div key={s.key} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }}>
@@ -416,7 +421,7 @@ function FinalCTA({ go, setQuote }) {
 }
 
 function PageHero({ eyebrow, title, text, image }) {
-  return <section className="page-hero"><div className="container page-hero-grid"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p></div>{image && <img src={image} alt={title} />}</div></section>
+  return <section className="page-hero"><div className="container page-hero-grid"><div><img className="page-logo" src={logo.full} alt="VJ Consultores Perú" /><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p></div>{image && <img src={image} alt={title} />}</div></section>
 }
 
 function ServicesPage({ filtered, categories, query, setQuery, filter, setFilter, setSelected, setQuote }) {
@@ -492,7 +497,7 @@ function QuoteModal({ open, onClose }) {
 }
 
 function Footer({ go }) {
-  return <footer><div className="container footer-grid"><div><button className="brand footer-brand" onClick={() => go('inicio')}><span className="logo-mark">VJ</span><div><strong>VJ Consultores Perú</strong><small>Seguridad e Ingeniería</small></div></button><p>Brindando soluciones integrales e impulsando el crecimiento a todo nivel.</p><small>RUC: 20609012332 · Desarrollado por Synkro</small></div><div><h4>Enlaces</h4>{pages.slice(0, 6).map((p) => <button key={p.id} onClick={() => go(p.id)}>{p.label}</button>)}</div><div><h4>Servicios</h4>{services.slice(0, 6).map((s) => <span key={s.id}>{s.name}</span>)}</div><div><h4>Contacto</h4><span>+51 959 462 430</span><span>{SECOND_NUMBER}</span><span>{EMAIL}</span><a href={wa()} target="_blank" rel="noreferrer">Cotizar por WhatsApp</a></div></div></footer>
+  return <footer><div className="container footer-grid"><div><button className="brand footer-brand logo-brand" onClick={() => go('inicio')}><img src={logo.full} alt="VJ Consultores Perú" /></button><p>Brindando soluciones integrales e impulsando el crecimiento a todo nivel.</p><small>RUC: 20609012332 · Desarrollado por Synkro</small></div><div><h4>Enlaces</h4>{pages.slice(0, 6).map((p) => <button key={p.id} onClick={() => go(p.id)}>{p.label}</button>)}</div><div><h4>Servicios</h4>{services.slice(0, 6).map((s) => <span key={s.id}>{s.name}</span>)}</div><div><h4>Contacto</h4><span>+51 959 462 430</span><span>{SECOND_NUMBER}</span><span>{EMAIL}</span><a href={wa()} target="_blank" rel="noreferrer">Cotizar por WhatsApp</a></div></div></footer>
 }
 
 createRoot(document.getElementById('root')).render(<App />)
