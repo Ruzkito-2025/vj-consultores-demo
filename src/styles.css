@@ -43,9 +43,9 @@ svg{width:20px;height:20px}
 
 .site-header{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(4,28,56,.94);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px)}
 .site-header.is-scrolled{box-shadow:0 10px 30px rgba(0,0,0,.22)}
-.nav-wrap{display:flex;align-items:center;gap:16px;height:72px}
-.brand{padding:0;border:0;background:transparent;min-width:128px;display:flex;align-items:center}
-.brand img{width:112px;height:auto;object-fit:contain}
+.nav-wrap{display:flex;align-items:center;gap:16px;height:68px}
+.brand{padding:0;border:0;background:transparent;min-width:110px;display:flex;align-items:center}
+.brand img{width:auto;height:38px;object-fit:contain}
 .desktop-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
 .desktop-nav button,.mobile-nav button{border:0;background:transparent;color:#fff;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:.04em;padding:12px 9px;border-radius:8px;display:flex;align-items:center;gap:5px;position:relative}
 .desktop-nav button svg{width:14px;height:14px;opacity:.82}
@@ -268,8 +268,8 @@ svg{width:20px;height:20px}
 
 @media (max-width: 768px){
   .container{width:min(1420px,calc(100% - 22px))}
-  .nav-wrap{height:68px}
-  .brand img{width:100px}
+  .nav-wrap{height:64px}
+  .brand img{width:auto;height:32px}
   .hero-section{padding-top:92px;padding-bottom:24px}
   .hero-grid,.trust-grid,.services-cards,.services-cards.compact,.iso-strip-items,.sgsst-features,.service-gallery,.resources-page-grid,.page-checks,.norma-grid{grid-template-columns:1fr}
   .hero-copy h1{font-size:42px}
